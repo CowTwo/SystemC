@@ -1,0 +1,10 @@
+# Include path
+/usr/local/systemc232/include
+
+# Libraries
+systemc
+m
+
+# Library search path
+/usr/local/systemc232/lib-linux64
+

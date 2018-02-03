@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.482356952/append=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.482356952/appendContributed=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.69993949/SYSTEMC_HOME/delimiter=\:
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.69993949/SYSTEMC_HOME/operation=append
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.69993949/SYSTEMC_HOME/value=/usr/local/systemc232/
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.69993949/append=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.release.69993949/appendContributed=true

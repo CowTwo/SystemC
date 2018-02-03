@@ -1,0 +1,24 @@
+!SESSION 2018-01-26 23:14:17.919 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-01-26 23:18:05.784
+!MESSAGE Indexed 'helloworld' (0 sources, 0 headers) in 0.004 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-01-26 23:32:13.556
+!MESSAGE Indexed 'helloworld' (1 sources, 0 headers) in 0.041 sec: 5 declarations; 1 references; 1 unresolved inclusions; 2 syntax errors; 3 unresolved names (33%)
+!SESSION 2018-02-03 01:06:39.171 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-03 01:22:02.696
+!MESSAGE Indexed 'tlm2_getting_started_1' (1 sources, 0 headers) in 0.25 sec: 27 declarations; 52 references; 4 unresolved inclusions; 8 syntax errors; 71 unresolved names (47%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-03 02:33:50.012
+!MESSAGE Indexed 'tlm2_getting_started_1' (1 sources, 371 headers) in 27.8 sec: 45,500 declarations; 74,617 references; 0 unresolved inclusions; 0 syntax errors; 7 unresolved names (0.0058%)
