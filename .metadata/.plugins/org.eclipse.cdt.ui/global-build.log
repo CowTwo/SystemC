@@ -1,15 +1,21 @@
-02:29:54 **** Build of configuration Debug for project tlm2_getting_started_1 ****
+09:25:08 **** Build of configuration Debug for project tlm2_getting_started_2 ****
 make all 
-Building file: ../tlm2_getting_started_1.cpp
+Building file: ../tlm2_getting_started_2.cpp
 Invoking: Cross G++ Compiler
-g++ -I/usr/local/systemc232//include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"tlm2_getting_started_1.d" -MT"tlm2_getting_started_1.d" -o "tlm2_getting_started_1.o" "../tlm2_getting_started_1.cpp"
-Finished building: ../tlm2_getting_started_1.cpp
+g++ -I/usr/local/systemc232/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"tlm2_getting_started_2.d" -MT"tlm2_getting_started_2.d" -o "tlm2_getting_started_2.o" "../tlm2_getting_started_2.cpp"
+Finished building: ../tlm2_getting_started_2.cpp
  
-Building target: tlm2_getting_started_1
+Building target: tlm2_getting_started_2
 Invoking: Cross G++ Linker
-g++ -L/usr/local/systemc232//lib-linux64 -Xlinker -rpath "/usr/local/systemc232/lib-linux64" -o "tlm2_getting_started_1"  ./tlm2_getting_started_1.o   -lsystemc -lm
-Finished building target: tlm2_getting_started_1
+g++ -L/usr/local/systemc232/lib-linux64 -Xlinker -rpath "/usr/local/systemc232/lib-linux64" -o "tlm2_getting_started_2"  ./tlm2_getting_started_2.o   -lsystemc -lm
+Finished building target: tlm2_getting_started_2
  
-02:42:10 **** Incremental Build of configuration Debug for project tlm2_getting_started_1 ****
+09:25:25 **** Incremental Build of configuration Debug for project tlm2_getting_started_1 ****
+make all 
+make: Nothing to be done for 'all'.
+09:25:55 **** Incremental Build of configuration Debug for project tlm2_getting_started_2 ****
+make all 
+make: Nothing to be done for 'all'.
+09:26:34 **** Incremental Build of configuration Debug for project tlm2_getting_started_2 ****
 make all 
 make: Nothing to be done for 'all'.

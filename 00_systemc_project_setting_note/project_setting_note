@@ -8,3 +8,5 @@ m
 # Library search path
 /usr/local/systemc232/lib-linux64
 
+# Other options
+-rpath "/usr/local/systemc232/lib-linux64"
