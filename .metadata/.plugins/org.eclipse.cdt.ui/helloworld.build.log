@@ -1,15 +1,6 @@
-02:29:36 **** Incremental Build of configuration Debug for project helloworld ****
+10:04:59 **** Incremental Build of configuration Debug for project helloworld ****
 make all 
-Building file: ../hello.cpp
-Invoking: Cross G++ Compiler
-g++ -I/usr/local/systemc232/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"hello.d" -MT"hello.d" -o "hello.o" "../hello.cpp"
-Finished building: ../hello.cpp
- 
-Building target: helloworld
-Invoking: Cross G++ Linker
-g++ -L/usr/local/systemc232//lib-linux64 -Xlinker -rpath "/usr/local/systemc232/lib-linux64" -o "helloworld"  ./hello.o   -lsystemc -lm
-Finished building target: helloworld
- 
+make: Nothing to be done for 'all'.
 
-02:29:38 Build Finished (took 1s.480ms)
+10:05:00 Build Finished (took 1s.65ms)
 

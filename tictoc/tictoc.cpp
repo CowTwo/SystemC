@@ -1,0 +1,147 @@
+/*
+ * tictoc.cpp
+ *
+ *  Created on: Apr 6, 2018
+ *      Author: root
+ */
+
+
+#define SC_INCLUDE_DYNAMIC_PROCESSES
+
+#include "systemc"
+using namespace sc_core;
+using namespace sc_dt;
+using namespace std;
+
+#include "tlm.h"
+#include "tlm_utils/simple_initiator_socket.h"
+#include "tlm_utils/simple_target_socket.h"
+
+
+template<unsigned int N_TARGETS>
+struct Router: sc_module
+{
+  // TLM-2 socket, defaults to 32-bits wide, base protocol
+  tlm_utils::simple_target_socket<Router>            target_socket;
+
+  // *********************************************
+  // Use tagged sockets to be able to distinguish incoming backward path calls
+  // *********************************************
+
+  tlm_utils::simple_initiator_socket_tagged<Router>* initiator_socket[N_TARGETS];
+  int data=0;
+
+  SC_CTOR(Router)
+  : target_socket("target_socket")
+  {
+    // Register callbacks for incoming interface method calls
+    target_socket.register_b_transport(       this, &Router::b_transport);
+
+    for (unsigned int i = 0; i < N_TARGETS; i++)
+    {
+      char txt[20];
+      sprintf(txt, "socket_%d", i);
+      initiator_socket[i] = new tlm_utils::simple_initiator_socket_tagged<Router>(txt);
+
+    }
+    SC_THREAD(thread_process);
+
+  }
+
+
+  void thread_process()
+  {
+    // TLM-2 generic payload transaction, reused across calls to b_transport
+    tlm::tlm_generic_payload* trans = new tlm::tlm_generic_payload;
+    sc_time delay = sc_time(10, SC_NS);
+
+    const char* name = sc_core::sc_get_current_process_b()->get_parent_object()->basename();
+    cout << "sc_module name=" << name << endl;
+
+    if (strcmp(name,"toc")==0){
+    	return;
+    }
+    // Generate a random sequence of reads and writes
+    for (int i = 32; i < 36; i += 4)
+    {
+
+      tlm::tlm_command cmd = static_cast<tlm::tlm_command>(rand() % 2);
+      if (cmd == tlm::TLM_WRITE_COMMAND) data = 0xFF000000 | i;
+
+      // Initialize 8 out of the 10 attributes, byte_enable_length and extensions being unused
+      trans->set_command( cmd );
+      trans->set_address( i );
+      trans->set_data_ptr( reinterpret_cast<unsigned char*>(&data) );
+      trans->set_data_length( 4 );
+      trans->set_streaming_width( 4 ); // = data_length to indicate no streaming
+      trans->set_byte_enable_ptr( 0 ); // 0 indicates unused
+      trans->set_dmi_allowed( false ); // Mandatory initial value
+      trans->set_response_status( tlm::TLM_INCOMPLETE_RESPONSE ); // Mandatory initial value
+
+      ( *initiator_socket[0] )->b_transport( *trans, delay );  // Blocking transport call
+
+      // Initiator obliged to check response status and delay
+      if ( trans->is_response_error() )
+        SC_REPORT_ERROR("TLM-2", "Response error from b_transport");
+
+      cout << "trans = { " << (cmd ? 'W' : 'R') << ", " << hex << i
+           << " } , data = " << hex << data << " at time " << sc_time_stamp()
+           << " delay = " << delay << endl;
+
+      // Realize the delay annotated onto the transport call
+      wait(delay);
+    }
+  }
+
+  // TLM-2 blocking transport method
+  virtual void b_transport( tlm::tlm_generic_payload& trans, sc_time& delay )
+  {
+	( *initiator_socket[0] )->b_transport( trans, delay );
+#if 0
+    sc_dt::uint64 address = trans.get_address();
+    sc_dt::uint64 masked_address;
+    unsigned int target_nr = decode_address( address, masked_address);
+
+    // Modify address within transaction
+    trans.set_address( masked_address );
+
+    // Forward transaction to appropriate target
+    ( *initiator_socket[target_nr] )->b_transport( trans, delay );
+#endif
+  }
+
+};
+
+
+SC_MODULE(Top)
+{
+  Initiator* initiator;
+  Router<4>* router;
+  Memory*    memory[4];
+
+  SC_CTOR(Top)
+  {
+    // Instantiate components
+    initiator = new Initiator("initiator");
+    router    = new Router<4>("router");
+    for (int i = 0; i < 4; i++)
+    {
+      char txt[20];
+      sprintf(txt, "memory_%d", i);
+      memory[i]   = new Memory(txt);
+    }
+
+    // Bind sockets
+    initiator->socket.bind( router->target_socket );
+    for (int i = 0; i < 4; i++)
+      router->initiator_socket[i]->bind( memory[i]->socket );
+  }
+};
+
+
+int sc_main(int argc, char* argv[])
+{
+  Top top("top");
+  sc_start();
+  return 0;
+}

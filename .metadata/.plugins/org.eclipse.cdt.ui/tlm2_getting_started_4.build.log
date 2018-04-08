@@ -1,0 +1,21 @@
+13:39:50 **** Build of configuration Debug for project tlm2_getting_started_4 ****
+make all 
+Building file: ../tlm2_getting_started_4.cpp
+Invoking: Cross G++ Compiler
+g++ -I/usr/local/systemc232/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"tlm2_getting_started_4.d" -MT"tlm2_getting_started_4.d" -o "tlm2_getting_started_4.o" "../tlm2_getting_started_4.cpp"
+../tlm2_getting_started_4.cpp:58:21: error: variable 'std::ofstream fout' has initializer but incomplete type
+ static ofstream fout("foo.txt");
+                     ^
+../tlm2_getting_started_4.cpp: In member function 'virtual tlm::tlm_sync_enum Target::nb_transport_fw(tlm::tlm_generic_payload&, tlm::tlm_phase&, sc_core::sc_time&)':
+../tlm2_getting_started_4.cpp:343:22: warning: unused variable 'adr' [-Wunused-variable]
+     sc_dt::uint64    adr = trans.get_address();
+                      ^
+../tlm2_getting_started_4.cpp: In member function 'void Target::peq_cb(tlm::tlm_generic_payload&, const tlm::tlm_phase&)':
+../tlm2_getting_started_4.cpp:435:26: warning: unused variable 'len' [-Wunused-variable]
+         unsigned int     len = trans.get_data_length();
+                          ^
+make: *** [tlm2_getting_started_4.o] Error 1
+subdir.mk:18: recipe for target 'tlm2_getting_started_4.o' failed
+
+13:39:53 Build Finished (took 2s.577ms)
+

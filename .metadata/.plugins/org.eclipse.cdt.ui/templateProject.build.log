@@ -1,0 +1,7 @@
+13:38:46 **** Clean-only build of configuration Debug for project templateProject ****
+make clean 
+rm -rf  ./tlm2_getting_started_4.o  ./tlm2_getting_started_4.d  templateProject
+ 
+
+13:38:47 Build Finished (took 1s.363ms)
+

@@ -1,0 +1,17 @@
+01:23:33 **** Incremental Build of configuration Debug for project tictoc ****
+make all 
+Building file: ../tictoc.cpp
+Invoking: Cross G++ Compiler
+g++ -I/usr/local/systemc232/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"tictoc.d" -MT"tictoc.d" -o "tictoc.o" "../tictoc.cpp"
+../tictoc.cpp: In constructor 'TicToc::TicToc(sc_core::sc_module_name)':
+../tictoc.cpp:34:12: error: 'class tlm_utils::simple_initiator_socket<TicToc>' has no member named 'register_b_transport'
+     socket.register_b_transport(this, &Memory::b_transport);
+            ^
+../tictoc.cpp:34:40: error: 'Memory' has not been declared
+     socket.register_b_transport(this, &Memory::b_transport);
+                                        ^
+make: *** [tictoc.o] Error 1
+subdir.mk:18: recipe for target 'tictoc.o' failed
+
+01:23:35 Build Finished (took 2s.234ms)
+
