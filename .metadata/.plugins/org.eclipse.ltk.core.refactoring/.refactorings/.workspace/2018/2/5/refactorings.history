@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;systemc_project_setting_note&apos; to &apos;00_systemc_project_setting_note&apos;" description="Rename resource &apos;systemc_project_setting_note&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/systemc_project_setting_note" name="00_systemc_project_setting_note" stamp="1517624771100" updateReferences="true"/>
-</session>

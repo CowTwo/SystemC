@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;waitEventExample/tlm2_getting_started_1.cpp&apos; to &apos;waitEventExample.cpp&apos;" description="Rename resource &apos;tlm2_getting_started_1.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="tlm2_getting_started_1.cpp" name="waitEventExample.cpp" stamp="1523147589590" updateReferences="true"/>
-</session>
