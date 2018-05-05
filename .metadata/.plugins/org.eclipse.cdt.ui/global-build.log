@@ -1,15 +1,15 @@
-08:16:48 **** Build of configuration Debug for project waitEventExample ****
+07:10:07 **** Build of configuration Debug for project tictoc ****
 make all 
-Building file: ../waitEventExample.cpp
+Building file: ../tictoc.cpp
 Invoking: Cross G++ Compiler
-g++ -I/usr/local/systemc232//include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"waitEventExample.d" -MT"waitEventExample.d" -o "waitEventExample.o" "../waitEventExample.cpp"
-Finished building: ../waitEventExample.cpp
+g++ -I/usr/local/systemc232/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"tictoc.d" -MT"tictoc.d" -o "tictoc.o" "../tictoc.cpp"
+Finished building: ../tictoc.cpp
  
-Building target: waitEventExample
+Building target: tictoc
 Invoking: Cross G++ Linker
-g++ -L/usr/local/systemc232//lib-linux64 -Xlinker -rpath "/usr/local/systemc232/lib-linux64" -o "waitEventExample"  ./waitEventExample.o   -lsystemc -lm
-Finished building target: waitEventExample
+g++ -L/usr/local/systemc232/lib-linux64 -Xlinker -rpath "/usr/local/systemc232/lib-linux64" -o "tictoc"  ./tictoc.o   -lsystemc -lm
+Finished building target: tictoc
  
-08:16:57 **** Incremental Build of configuration Debug for project waitEventExample ****
+07:10:13 **** Incremental Build of configuration Debug for project tictoc ****
 make all 
 make: Nothing to be done for 'all'.

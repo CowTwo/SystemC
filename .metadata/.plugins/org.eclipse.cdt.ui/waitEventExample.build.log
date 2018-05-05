@@ -1,6 +1,6 @@
-08:16:57 **** Incremental Build of configuration Debug for project waitEventExample ****
+00:26:54 **** Incremental Build of configuration Debug for project waitEventExample ****
 make all 
 make: Nothing to be done for 'all'.
 
-08:16:58 Build Finished (took 1s.466ms)
+00:26:55 Build Finished (took 534ms)
 

@@ -1,15 +1,6 @@
-13:40:26 **** Build of configuration Debug for project tlm2_getting_started_3 ****
+00:26:51 **** Build of configuration Debug for project tlm2_getting_started_3 ****
 make all 
-Building file: ../tlm2_getting_started_3.cpp
-Invoking: Cross G++ Compiler
-g++ -I/usr/local/systemc232/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"tlm2_getting_started_3.d" -MT"tlm2_getting_started_3.d" -o "tlm2_getting_started_3.o" "../tlm2_getting_started_3.cpp"
-Finished building: ../tlm2_getting_started_3.cpp
- 
-Building target: tlm2_getting_started_3
-Invoking: Cross G++ Linker
-g++ -L/usr/local/systemc232/lib-linux64 -Xlinker -rpath "/usr/local/systemc232/lib-linux64" -o "tlm2_getting_started_3"  ./tlm2_getting_started_3.o   -lsystemc -lm
-Finished building target: tlm2_getting_started_3
- 
+make: Nothing to be done for 'all'.
 
-13:40:30 Build Finished (took 4s.43ms)
+00:26:52 Build Finished (took 603ms)
 

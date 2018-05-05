@@ -1,6 +1,6 @@
-01:49:37 **** Incremental Build of configuration Debug for project tlm2_getting_started_2 ****
+00:26:50 **** Build of configuration Debug for project tlm2_getting_started_2 ****
 make all 
 make: Nothing to be done for 'all'.
 
-01:49:38 Build Finished (took 1s.217ms)
+00:26:51 Build Finished (took 575ms)
 
